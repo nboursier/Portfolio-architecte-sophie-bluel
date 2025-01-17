@@ -187,6 +187,15 @@ footer nav ul {
 	margin: 2em
 }
 
+.footer{
+	background-color: white;
+	height: 60px;
+	display: flex;
+
+	flex-direction: column;
+	align-items: flex-end;
+
+}
 /* Log in */
 
 #Login {
