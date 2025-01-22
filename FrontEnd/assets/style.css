@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background-color: #fffef8;
+	
 }
 ol, ul {
 	list-style: none;
@@ -53,11 +53,14 @@ body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	background-color: #fffef8;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+	
 }
 section {
 	margin: 50px 0
@@ -273,4 +276,159 @@ margin: auto;
 	border-radius: 60px ;
 	border-color: #1D6154;
 	border: solid 1px;
+}
+
+.connected{
+	display: block;
+}
+.disconnected{
+	display: none;
+}
+
+
+.headerlog{
+	background-color: black;
+	height: 59px;
+	flex-direction: column;
+	display: flex;	
+	justify-content: center;
+	text-align: center;
+	color: white;
+}
+.headerlog--text{
+	display: flex;
+	flex-direction: row ;
+	justify-content: center;
+}
+
+.headerlog--svg{
+	fill: white;
+}
+.headerlog--text2{
+	margin-left: 10px;
+	font-weight: 400;
+}
+
+.projet{
+	display: flex;
+	justify-content: center;
+	
+}
+
+.projet--modif{
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
+	margin-left: 20px;
+	
+}
+
+.projet--text{
+	font-family: 'Work Sans';
+	font-size: 16px;
+	margin-left: 10px;
+}
+
+.projet--svg{
+	fill: black;
+}
+
+#dialog{
+border-style: none;
+border-radius: 10px;
+
+}
+
+
+.modal{
+	width: 630px;
+	height: 688px;
+	background-color: white;
+	border-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	
+	align-items: center;
+	
+}
+.modal--window__txt{
+	display: flex;
+	margin-top: 60px;
+	font-family: 'Work Sans';
+	font-size: 26px;
+	font-weight: 400;
+	margin-bottom: 46px;
+}
+
+.modal--window__xmark{
+	height: 24px;
+	width: 24px;
+	position: absolute;
+	top: 24px;
+	right: 24px;
+}
+
+.modal--window__container{
+	
+	width: auto;
+	
+}
+.modal--window__containerproject{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	width: 90%;
+	column-gap: 10px;
+	row-gap: 40px;
+	
+}
+.modal--window__img{
+	
+	width: 77px;
+	height: 102px;
+	
+}
+
+.modal--window__img2{
+	
+	object-fit: contain;
+	width: 77px;
+}
+
+dialog::backdrop{
+
+background-color: black;
+	opacity: 0.3;
+}
+
+
+.modal--window__trashiconcontainer{
+	width: 17px;
+	height: 17px;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	border-radius: 2px;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	z-index: 1;
+	transform: translate(54px,6px);
+}
+.modal--window__trashicon{
+	
+	width: 10px;
+	height: 10px;
+	fill: white;
+	background-color: black;
+	margin-bottom: 1px;
+	
+	
+	
+}
+
+.modaloff{
+	
+	display: none;
+	
 }
