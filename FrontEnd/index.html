@@ -15,7 +15,7 @@
 
 
 <body>
-	<div class="headerlog connected">		
+	<div class="headerlog " id="headerlog">		
 		<div class="headerlog--text">
 			<svg class="headerlog--svg"   xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#5f6368"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/></svg>
 			<p class="headerlog--text2">  Mode edition</p> 
@@ -28,13 +28,13 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li><a href="login.html"></a>login</li>
+			<li><a class= "login" href="login.html" id="login">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
 
-<dialog class="dialoga"  id="modal">	
+<dialog class="dialoga"  id="modal1">	
 	<div class="modal">			
 		<p class="modal--window__txt">Galerie photo</p>					
 		<div class="modal--window__xmark" id="dialogclose"> 
@@ -45,9 +45,48 @@
 			<div  id="photomodal" >
 			</div>
 		</div>
-		<div class="modal--window__trashiconcontainer modaloff" id="trash">
-		<svg class="modal--window__trashicon"  id="trashicon"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0L284.2 0c12.1 0 23.2 6.8 28.6 17.7L320 32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 96C14.3 96 0 81.7 0 64S14.3 32 32 32l96 0 7.2-14.3zM32 128l384 0 0 320c0 35.3-28.7 64-64 64L96 512c-35.3 0-64-28.7-64-64l0-320zm96 64c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-224c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-224c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-224c0-8.8-7.2-16-16-16z"/></svg>
+		<hr class="modal--line" />
+		<button class="modal--button" id="modalbutton">ajouter une photo</button>
+	</div>
+</dialog>	
+
+<dialog class="dialoga"  id="modal2">	
+	<div class="modal">			
+		<div class="modal--window__arrowleft" id="dialogarrowleft">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
 		</div>
+		<p class="modal--window__txt">Ajout photo</p>					
+		<div class="modal--window__xmark" id="dialogclose2"> 
+		<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" /></svg>
+		</div>	
+		
+		<div class="modal--window__container2" id="formmodal2">
+			<div class="modal--window__containerphoto" id="modalwindowcontainer2photo">
+				<img class="modal--window__container__photo__preview-none" src="" id="image" alt="">
+				<svg class="modal--window__container__photo__icon " id="modalwindowcontainerphotoicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM323.8 202.5c-4.5-6.6-11.9-10.5-19.8-10.5s-15.4 3.9-19.8 10.5l-87 127.6L170.7 297c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6l96 0 32 0 208 0c8.9 0 17.1-4.9 21.2-12.8s3.6-17.4-1.4-24.7l-120-176zM112 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"/></svg>
+				<button  class="modal--window__containerphotobutton" id="modal2buttoninputfile"><p class="modal--window__containerphotobutton--txt">+ Ajouter photo</p><input name="image" type="file" class="modal--window__containerphotobuttoninput"  id="modal2inputfile" accept="image/jpeg, image/png">
+				</button>
+				<p class="modal--window__container__photo__txt " id="modalwindowcontainerphototxt"> jpg. png : 4 mo max</p>
+			</div>
+
+			<div class="modal--window__container2-title">
+				<p class="modal--window__container2--txt">Titre</p>
+				<input name="title" type="text" id="title" class="modal--window__container2--txtinput">
+			</div>
+
+			<div class="modal--window__container2-categorie">
+				<p class="modal--window__container2--txt">Catégorie</p>
+				<select name="category" id="category" class="modal--window__container2--txtinput">
+				<option value="1">Objets</option>
+				<option value="2">Appartements</option>
+				<option value="3">Hotels & restaurants</option>
+				</select>
+			</div>
+		</div>
+			<hr class="modal--line" />
+			<button type="submit" class="modal--buttongrey" id="modalbutton2">valider</button>
+		
+		
 	</div>
 </dialog>	
 
@@ -69,11 +108,7 @@
 		
 		<div class="projet ">
 		<h2>Mes Projets</h2>
-		<div class="projet--modif connected" id="dialogopen">
-			<svg class="projet--svg"   xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#5f6368"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/></svg>
-			<div class="projet--text" >  modifier</div> 
-			
-		</div>
+		<div  id="dialogopen"></div>
 	</div>
 		<div class="filtercontainer" >
 		<div class="filtercontainer2" id="filter">

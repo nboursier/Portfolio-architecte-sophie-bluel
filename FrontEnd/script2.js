@@ -1,16 +1,5 @@
 
 
-// login //
-
-// "email": "sophie.bluel@test.tld" , "password" : "S0phie"
-
- 
-//   {"email": "sophie.bluel@test.tld" ,"password": "S0phie" }
-// {
-//     "email": "string",
-//     "password": "string"
-//   }
-
 
 async function login() { 
     const formu = document.getElementById("form")    
@@ -28,10 +17,16 @@ async function login() {
         }
     });
     let datar = await response1.json()
+   console.log(datar)
     
-    localStorage.setItem('Auth',datar)
-    console.log(datar)
+     if (response1.status !== 200 ){
+        alert("erreur")
+     }
+     else{
+        localStorage.setItem('Auth',datar.token)
     
+        window.open('./index.html')
+     }
     return datar
     
     
@@ -53,7 +48,7 @@ form.addEventListener("submit", (event) => {
     let regex = new RegExp("^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9._-]+$");
     let resultat = regex.test(email);
     if (email === "") {
-        console.log('Le champ email est vide');
+        alert('Le champ email est vide');
     } else {
         console.log('Le champ email est rempli');
     }
@@ -61,7 +56,7 @@ form.addEventListener("submit", (event) => {
     if (resultat = true) {
         console.log('Le champ email est conforme');
     } else {
-        console.log('Le champ email est non conforme');
+        alert('Le champ email est non conforme');
     }
     event.preventDefault()
     
