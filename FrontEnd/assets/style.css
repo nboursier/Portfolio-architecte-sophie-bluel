@@ -200,6 +200,9 @@ footer nav ul {
 
 }
 /* Log in */
+.linkindex{
+	text-decoration: none;
+}
 
 .login{
 	text-decoration: none;

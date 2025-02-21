@@ -20,7 +20,7 @@ async function login() {
    console.log(datar)
     
      if (response1.status !== 200 ){
-        alert("erreur")
+        alert("erreur sur la saisie du login et du mot de passe")
      }
      else{
         localStorage.setItem('Auth',datar.token)
