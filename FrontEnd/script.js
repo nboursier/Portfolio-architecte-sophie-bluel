@@ -131,13 +131,15 @@ async function initmodal(tokeni) {
         imagediv.appendChild(trashcontainer)
         imagediv.appendChild(image)
         photomodal.appendChild(imagediv)
-
+        
     }
     const modalbutton = document.getElementById("modalbutton");
     const dialog2 = document.getElementById("modal2");
     const closeButton2 = document.getElementById("dialogclose2");
     modalbutton.addEventListener("click", () => {
         dialog2.showModal()
+       
+         
     })
     closeButton2.addEventListener("click", () => {
         dialog2.close()
@@ -147,6 +149,19 @@ async function initmodal(tokeni) {
         dialog2.close()
         dialog.showModal()
     })
+    const dialog = document.querySelector("dialog");
+    window.onclick = function(event) {
+    if (event.target == dialog) {
+        
+        dialog.close()
+    }
+    if (event.target == dialog2) {
+        dialog2.close()
+        
+    }
+  }
+  
+    
 }
 
 function displayimage() {
@@ -168,9 +183,8 @@ function displayimage() {
         const image = document.getElementById('image');
         image.classList.add("modal--window__container__photo__preview")
         image.classList.remove("modal--window__container__photo__preview-none")
-        const modal2button2 = document.getElementById("modalbutton2");
-        modal2button2.classList.remove("modal--buttongrey")
-        modal2button2.classList.add("modal--button")
+        
+
         const file = event.target.files[0];
         console.log(file)
         const filename = file.name.split(".")
@@ -186,14 +200,33 @@ function displayimage() {
             reader.readAsDataURL(file);
         }
     })
+   
 }
 
 function submitimage(tokeni) {
-    const formmodal2button = document.getElementById('modalbutton2');
+    
+    
+    const title = document.getElementById('title')
+const formmodal2button = document.getElementById('modalbutton2');
+const inputphoto = document.getElementById('modal2inputfile')
+        
+title.addEventListener("change", function (event) {
+    event.preventDefault()
+
+    if (title.value !="" && inputphoto.value!=""  ){   formmodal2button.classList.remove("modal--buttongrey")
+        formmodal2button.classList.add("modal--button")
+    } 
+    else {formmodal2button.classList.add("modal--buttongrey")
+        formmodal2button.classList.remove("modal--button")}
+}
+   
+
+)
+
+    
     const dialog2 = document.getElementById("modal2");
     formmodal2button.addEventListener("click", async (event) => {
         event.preventDefault()
-        const inputphoto = document.getElementById('modal2inputfile')
         const file = inputphoto.files[0]
         console.log(file)
         const title = document.getElementById('title')
@@ -241,6 +274,8 @@ function submitimage(tokeni) {
             modalwindowcontainerphototxt.classList.remove("modal--window__container__photo__txt-none")
             const modalwindowcontainerphotobutton = document.getElementById('modal2buttoninputfile')
             modalwindowcontainerphotobutton.classList.remove("modal--window__containerphotobuttoninput")
+            formmodal2button.classList.add("modal--buttongrey")
+        formmodal2button.classList.remove("modal--button")
         }
     }
     )
@@ -250,13 +285,14 @@ const dialog = document.querySelector("dialog");
 const showButton = document.getElementById("dialogopen");
 const closeButton = document.getElementById("dialogclose");
 showButton.addEventListener("click", () => {
-    dialog.showModal()
+    dialog.showModal()   
 })
 closeButton.addEventListener("click", () => {
     dialog.close()
+
 })
 
-
+  
 async function init() {
     const data2 = await getworks()
     let j = data2.length
